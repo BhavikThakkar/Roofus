@@ -1,1 +1,83 @@
 // app global css in SCSS form
+@import "../css/quasar.variables.scss";
+*{
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+.main-color{
+    color:$main-font-color;
+}
+.form-lable{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    margin-top:5px;
+    margin-bottom: 5px;
+}
+.bg-main-color{
+    background: $bg-color;
+}
+
+// margin-css
+.margin-top-25{
+    margin-top: 25px;
+}
+.margin-b-20{
+    margin-bottom: 20px;
+}
+.margin-t-44{
+    margin-top: 44px;
+}
+
+// font css
+.f-18{
+    font-size: 18px;
+}
+.f-14{
+    font-size: 14px;
+}
+
+
+
+.q-input{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.q-field__control{
+    height: auto;
+}
+.q-field__native, .q-field__prefix, .q-field__suffix, .q-field__input{
+    padding: 5px 0;
+    font-size: 14px;
+}
+.form-field-gap{
+    margin-bottom: 30px;
+}
+
+// common-btn css
+.q-btn--rectangle {
+    border-radius: 10px;
+}
+.bg-primary {
+    background: $primary-color !important;
+}
+
+// bg-color css
+.q-btn--actionable.q-btn--standard:before{
+    box-shadow: 0px 0px 25px rgb(0 0 0 / 3%);
+}
+
+
+// header css
+.q-layout__section--marginal{
+    background-color:$white;
+}
+.q-layout__shadow:after{
+  display:none
+}
+.q-toolbar{
+    min-height:auto
+}

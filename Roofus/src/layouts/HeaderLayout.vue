@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+    <q-header elevated class="header-wrapper">
       <q-toolbar>
         <!-- <q-btn
           flat
@@ -11,11 +11,23 @@
           @click="toggleLeftDrawer"
         /> -->
 
-        <q-toolbar-title>
-          Roofus App
-        </q-toolbar-title>
+        <div><div class="text-left"><img width="93" height="23" src="~assets/main-logo.png"></div></div>
 
-        <!-- <div>Quasar v{{ $q.version }}</div> -->
+
+        <q-tabs
+          v-model="tab"
+          no-caps
+          class="bg-red text-white shadow-2 flex flex-center"
+          @click="tabClickEvent"
+        >
+          <q-tab name="overview" label="OverView" />
+          <q-tab name="payments" label="Payments" />
+          <q-tab name="lease" label="Lease" />
+          <q-tab name="maintenance" label="Maintenance" />
+        </q-tabs>
+
+
+
       </q-toolbar>
     </q-header>
 
@@ -95,16 +107,26 @@ const linksList = [
 ]
 
 export default defineComponent({
-  name: 'MainLayout',
+  name: 'HeaderLayout',
 
   components: {
     // EssentialLink
+  },
+  methods:{
+    tabClickEvent() {
+      console.log('tab',this.tab)
+      this.$router.push('/header/'+this.tab)
+    },
+    openProfilePage () {
+      this.$router.push('/header/profile')
+    }
   },
 
   setup () {
     const leftDrawerOpen = ref(false)
 
     return {
+      tab:'',
       essentialLinks: linksList,
       leftDrawerOpen,
       toggleLeftDrawer () {
@@ -114,3 +136,11 @@ export default defineComponent({
   }
 })
 </script>
+
+<style lang="sass">
+.header-wrapper
+  background: #FAFAFA
+  box-shadow: 0px 4px 10px rgb(0 0 0 / 9%)
+  padding: 15.5px 30px
+
+</style>
