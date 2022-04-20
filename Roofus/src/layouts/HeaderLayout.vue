@@ -27,7 +27,7 @@
             <img width="40" height="40" src="~assets/user-img.png">
               <q-btn-dropdown class="dropdown-btn">
                 <q-list class="custom-dropdown-list">
-                  <q-item clickable v-close-popup @click="onItemClick" >
+                  <q-item clickable v-close-popup @click="openProfilePage" >
                     <q-item-section>
                       <q-item-label>Profile</q-item-label>
                     </q-item-section>

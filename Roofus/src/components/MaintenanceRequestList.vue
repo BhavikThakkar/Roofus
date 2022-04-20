@@ -1,7 +1,7 @@
 <template>
   <div class="container-box q-mx-auto margin-t-44 maintenance-request">
     <h5 class="f-18 main-color q-mt-none q-mb-none text-left fw-600">MAINTENANCE REQUESTS</h5>
-      <!-- <q-card class="my-card q-mt-none active-card">
+      <q-card class="my-card q-mt-none active-card">
         <q-card-section class="card-p-15">
           <div class="main-section">
             <div class="main-wrapper flex items-center">
@@ -59,8 +59,8 @@
               </div>
             </div>
           </q-card-section>
-        </q-card> -->
-        <!-- <q-card class="maintenance-card q-mt-none">
+        </q-card>
+        <q-card class="maintenance-card q-mt-none">
           <q-card-section class="card-p-15">
             <div class="main-section">
               <div class="main-wrapper flex items-center">
@@ -136,9 +136,9 @@
               </div>
             </div>
           </q-card-section>
-        </q-card> -->
+        </q-card>
 
-    <q-card class="maintenance-card q-mt-none active-card">
+    <q-card class="maintenance-card q-mt-none ">
       <q-card-section class="card-p-15">
         <div class="main-section">
           <div class="main-wrapper flex items-center">
@@ -183,6 +183,7 @@
         label="New Maintenance Request"
         class="margin-t-20 btn-fixwd-height p-relative text-capitalize bg-primary new-maintenance-btn"
         type="button"
+        @click="newMaintenanceRequestClick"
       />
     </div>
   </div>
@@ -202,6 +203,11 @@ export default defineComponent({
         status:String,
         dateValue:String
 			},
+  },
+  methods: {
+    newMaintenanceRequestClick() {
+      alert('Redirecting user to Maintenance Creation page')
+    }
   },
   created() {
     console.log(this.singleMaintenance)

@@ -7,6 +7,7 @@
         <h5 class="f-18 main-color q-mt-none q-mb-none text-left fw-600">
           OVERVIEW
         </h5>
+        <!--Overview Details part design Start -->
         <q-card class="my-card q-mt-none">
           <q-card-section>
             <div class="main-section">
@@ -30,6 +31,7 @@
                       label="View Lease"
                       class="btn-with-icon view-lease btn-fixwd-height p-relative text-capitalize bg-primary margin-r-10 margin-b-10"
                       type="button"
+                      @click="viewLeaseClick"
                     />
                     <q-btn
                       label="Contact Asset Manager"
@@ -45,8 +47,10 @@
             </div>
           </q-card-section>
         </q-card>
+        <!--Overview Details part design end -->
       </div>
-      <div class="container-box q-mx-auto overview-property overview-main">
+      <!--Create Rquest part design Start -->
+      <div v-if="!isShowMaintenanceList" class="container-box q-mx-auto overview-property overview-main">
         <q-card class="my-card q-mt-none">
           <q-card-section>
             <div class="main-section">
@@ -68,6 +72,7 @@
                       label="Create Request"
                       class="btn-with-icon create-request btn-fixwd-height p-relative text-capitalize bg-primary"
                       type="button"
+                      @click="createRequestClick"
                     />
                   </div>
                 </div>
@@ -79,18 +84,20 @@
           </q-card-section>
         </q-card>
       </div>
+      <!--Create Rquest part design End -->
       <MaintenanceRequestList
-        :key="mn.id"
-        v-for="mn in MaintenanceRequestListData"
-        :singleMaintenance="mn"
+        v-if="isShowMaintenanceList"
       />
     </div>
+      <!--:key="mn.id"
+          v-for="mn in MaintenanceRequestListData"
+          :singleMaintenance="mn"
+      -->
   </div>
 </template>
 
 <script>
-import { defineComponent } from "vue";
-import { useQuasar } from "quasar";
+import { defineComponent,ref } from "vue";
 import  MaintenanceRequestList  from '../components/MaintenanceRequestList.vue'
 
 const MaintenanceRequestListData = [
@@ -125,30 +132,20 @@ export default defineComponent({
   components: {
     MaintenanceRequestList
   },
-  setup() {
-    const $q = useQuasar();
-    function onModalClick() {
-      $q.dialog({
-        title: "Prompt",
-        message: "What is your name?",
-        prompt: {
-          model: "",
-          type: "text", // optional
-        },
-        cancel: true,
-        persistent: true,
-      })
-        .onOk((data) => {
-          console.log(">>>> OK, received", data);
-        })
-        .onCancel(() => {
-          console.log(">>>> Cancel");
-        })
-        .onDismiss(() => {
-          console.log("I am triggered on both OK and Cancel");
-        });
+  methods: {
+    viewLeaseClick() {
+      this.$router.push('/header/lease')
+    },
+    createRequestClick() {
+      console.log('create request')
+      this.isShowMaintenanceList = true;
     }
-    return { onModalClick };
+  },
+  setup () {
+
+    return {
+      isShowMaintenanceList:ref(false),
+    }
   },
 });
 </script>

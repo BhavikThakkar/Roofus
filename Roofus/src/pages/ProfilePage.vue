@@ -7,7 +7,7 @@
             <q-card class="profile-left">
               <q-card-section>
                 <div class="profile-img q-mx-auto"><img src="/src/assets/user-img.png"></div>
-                <div class="flex margin-top-25 items-center justify-center"><img width="15" height="15" src="/src/assets/edit-profile.png"><h6 class="q-ml-sm q-mt-sm secodary-font-color f-14 line-height-21">Choose File</h6></div>
+                <div class="flex margin-top-25 items-center justify-center"><img width="15" height="15" src="/src/assets/edit-profile.png"><h6 class="q-ml-sm q-mt-sm secodary-font-color f-14 line-height-21">Change Image</h6></div>
               </q-card-section>
             </q-card>
             <q-card class="q-mt-none profile-right card-without-m p-relative">
@@ -17,8 +17,7 @@
                   <div class="profile-content w-100">
                     <div class="proflie-title flex items-center"><div class="avtart-img flex items-center justify-center"><img width="19" height="19" src="/src/assets/avtar.png"></div><h6 class="f-18 main-color text-left">Profile Information</h6></div>
                     <q-form
-                      @submit="onSubmit"
-                      @reset="onReset"
+
                       class="q-gutter-md proflie-form">
                       <div class="form-field-gap">
                       <h6 class="main-color form-lable text-left">Email</h6>
@@ -82,12 +81,6 @@ import { defineComponent,ref  } from 'vue'
 
 export default defineComponent({
   name: 'ProfilePage',
-
-  methods: {
-    // onLoginButtonClick() {
-    //   console.log('onLoginButtonClick');
-    // }
-  },
   setup () {
     return {
       changePassword: ref(false)
