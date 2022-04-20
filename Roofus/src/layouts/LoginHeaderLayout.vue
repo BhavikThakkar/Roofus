@@ -41,4 +41,15 @@ export default defineComponent({
   min-height: 0px !important;
 }
 
+@media(max-width:550px){
+  .header-wrapper > div{
+    justify-content: center;
+
+  }
+  .header-wrapper{
+    // height: 70px;
+    padding-top: 30px;
+  }
+}
+
 </style>

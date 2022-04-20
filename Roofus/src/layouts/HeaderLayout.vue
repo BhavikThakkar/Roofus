@@ -26,8 +26,8 @@
           <div class="profile-image p-relative cursor-pointer">
             <img width="40" height="40" src="~assets/user-img.png">
               <q-btn-dropdown class="dropdown-btn">
-                <q-list>
-                  <q-item clickable v-close-popup @click="onItemClick">
+                <q-list class="custom-dropdown-list">
+                  <q-item clickable v-close-popup @click="onItemClick" >
                     <q-item-section>
                       <q-item-label>Profile</q-item-label>
                     </q-item-section>
@@ -120,21 +120,7 @@ export default defineComponent({
   font-size: 0px;
   transform: none;
 }
-.q-icon.q-btn-dropdown__arrow:after{
-  content: '';
-  background-image: url('/src/assets/down-arrow.png');
-  width: 13px;
-  height: 13px;
-  align-items: center;
-  display: flex;
-  background-repeat: no-repeat;
-  position: absolute;
-  left: 100%;
-  top: -28px;
-  margin-left: 10px;
-  bottom: 0;
-  margin: auto auto auto 10px;
-}
+
 .q-btn--actionable.q-btn--standard:before{
     box-shadow: unset;
 }
@@ -144,4 +130,12 @@ export default defineComponent({
 .dropdown-btn{
   padding:0
 }
+
+.custom-dropdown-list.q-list {width: 140px;}
+
+// .q-menu.q-position-engine.scroll {
+//   top: 61px !important;
+//   left: unset !important;
+//   right: 30px !important;
+// }
 </style>

@@ -143,11 +143,11 @@ export default defineComponent({
   border-bottom: 1px solid #E0E0E0
   top: 100%
 .lease-right
-  margin-left:10px
+  margin-left:10px !important
 .lease-screen .lease-info
   width: calc(50% - 10px)
 .lease-left
-  margin-right:10px
+  margin-right:10px !important
 .profile-content
   padding-bottom:23px
   margin-bottom:20px

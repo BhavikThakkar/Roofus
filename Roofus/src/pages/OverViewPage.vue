@@ -153,79 +153,100 @@ export default defineComponent({
 });
 </script>
 
-<style lang="sass">
-.container-box
-  max-width:1140px
-.q-card__section
-  padding:25px
-.q-card
-  background: #FFFFFF
-  mix-blend-mode: normal
-  box-shadow: 0px 0px 25px rgb(0 0 0 / 3%)
-  border-radius: 10px
-  margin: 20px auto 0px
-.overview-img
-  max-width: 352px
-  margin-right:85px
-.overview-content
-  width: calc(100% - (352px + 85px))
-  padding-right: 83px
-.maintenance-img img
-  height: 100%
-  width: 100%
-  display: inline-block
-  border-radius: 10px
-.category
-  width: calc(100% - 100px)
-  justify-content: space-between
-.maintenance-second.maintenance-box
-  justify-content: center
-  width: calc((100% / 3) - 79px)
-  margin-left: 79px
-.maintenance-first.maintenance-box
-  justify-content: space-between
-.maintenance-third.maintenance-box
-  justify-content: space-between
-  margin-left: 109px
-  width: calc((100% / 3) - 109px)
-.maintenance-box
-  width: calc(100% / 3)
-.maintenance-img
-  width: 70px
-  height:70px
-.maintenance-card
-  margin:10px 0px 0px
-.new-maintenance-btn
-  min-width:230px
-.card-p-15
-  padding:15px
-.active-card
-  background:#F0DCCD
-.overview-properties
-  width:359px
-  margin-right:0
-.overview-properties-content
-  padding-right:0
-  padding-left: 59px
-  width: calc(100% - 359px)
-.status-sign:before
-  content: ''
-  background: #999999
-  width: 5px
-  height: 5px
-  border-radius: 100%
-  display: inline-block
-  position: absolute
-  left: 0
-  top: 10px
-  bottom: 0
-  margin: auto
-.maintenance-box h6
-  padding-top:10px
-.notiication-icon
-  position: absolute
-  right: -50px
-  top: -5px
-  width: 20px
+<style lang="scss">
+.container-box{
+  max-width:1140px;
+}
+.q-card__section{
+  padding:25px;
+}
+.q-card{
+  background: #FFFFFF;
+  mix-blend-mode: normal;
+  box-shadow: 0px 0px 25px rgb(0 0 0 / 3%);
+  border-radius: 10px;
+  margin: 20px auto 0px;
+}
+.overview-img{
+  max-width: 352px;
+  margin-right:85px;
+}
+.overview-content{
+  width: calc(100% - (352px + 85px));
+  padding-right: 83px;
+}
+.maintenance-img img{
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  border-radius: 10px;
+}
+.category{
+  width: calc(100% - 100px);
+  justify-content: space-between;
+}
+.maintenance-second.maintenance-box{
+  justify-content: center;
+  width: calc((100% / 3) - 79px);
+  margin-left: 79px;
+}
+.maintenance-first.maintenance-box{
+  justify-content: space-between;
+}
+.maintenance-third.maintenance-box{
+  justify-content: space-between;
+  margin-left: 109px;
+  width: calc((100% / 3) - 109px);
+}
+.maintenance-box{
+  width: calc(100% / 3);
+}
+.maintenance-img{
+  width: 70px;
+  height:70px;
+}
+.maintenance-card{
+  margin:10px 0px 0px;
+}
+.new-maintenance-btn{
+  min-width:230px;
+}
+.card-p-15{
+  padding:15px;
+}
+.active-card{
+  background:#F0DCCD;
+}
+.overview-properties{
+  width:359px;
+  margin-right:0;
+}
+.overview-properties-content{
+  padding-right:0;
+  padding-left: 59px;
+  width: calc(100% - 359px);
+}
+.status-sign:before{
+  content: '';
+  background: #999999;
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 10px;
+  bottom: 0;
+  margin: auto;
+}
+.maintenance-box h6{
+  padding-top:10px;
+}
+.notiication-icon{
+  position: absolute;
+  right: -50px;
+  top: -5px;
+  width: 20px;
   height: 20px
+}
 </style>

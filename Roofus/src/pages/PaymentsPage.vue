@@ -24,7 +24,7 @@
                     <q-btn label="Auto Pay Inactive" @click="AutoAccountInactive = true" class="bg-trasnparent-btn main-color btn-fixwd-height p-relative text-capitalize margin-r-10" type="button" />
                     <q-btn label="Set-up Auto Pay" @click="SetupAccount = true" class="bg-dark contact-assets btn-fixwd-height p-relative text-capitalize" type="button" />
                 </div>
-                <h5 class="f-18 main-color q-mt-none q-mb-none text-left fw-600">Manage Payments</h5>
+                <h5 class="f-18 main-color q-mt-none q-mb-none text-left fw-600 margin-t-30">Manage Payments</h5>
                 <q-card class="q-mt-none box-15 make-payment-desktop">
                   <q-card-section class="">
                     <div class="main-section">
@@ -67,7 +67,7 @@
                   </q-card-section>
                 </q-card>
 
-                                <!-- Mobile view -->
+                <!-- Mobile view -->
                 <q-list class="makePayment-expansion make-payment-mobile margin-t-20 hidden w-100">
                   <q-expansion-item
                     class="text-left"
@@ -124,9 +124,6 @@
                 <div class="text-right">
                   <q-btn label="Add Payment Method" @click="AddPaymentMethod = true" class="margin-t-20 btn-fixwd-height p-relative text-capitalize bg-primary margin-t-40" type="button" />
                 </div>
-
-
-
 
               </q-tab-panel>
               <q-tab-panel name="Setup" class="q-px-none setup-panel">
@@ -191,12 +188,40 @@
                 </q-card>
               </q-tab-panel>
               <q-tab-panel name="History" class="history-panel">
-                <div class="text-h6">Alarms</div>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                <h5 class="f-18 main-color q-mt-none q-mb-none text-left fw-600">Payment History</h5>
+                <div class="">
+                  <q-card class="col-sm-6">
+                    <q-card-section class="">
+                      <div class="main-section">
+                      <div class="main-wrapper items-center steup-form justify-between">
+                        <h6 class="main-color f-14 line-height-21 fw-600 text-left margin-b-10">Auto Pay</h6>
+                        <p class="main-color f-14 line-height-21 text-left ">Enabling  will make sure you get your payments in on time.</p>
+                        <div class="text-left q-mt-none">
+                            <q-btn label="Set-up Auto Pay" class="margin-t-20 btn-fixwd-height p-relative text-capitalize bg-primary margin-t-40" type="button" />
+                        </div>
+                      </div>
+                      </div>
+                    </q-card-section>
+                  </q-card>
+                </div>
               </q-tab-panel>
               <q-tab-panel name="ManagePayment" class="managePayment-panel">
-                <div class="text-h6">Movies</div>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                <h5 class="f-18 main-color q-mt-none q-mb-none text-left fw-600">Manage A Payment</h5>
+                <div class="">
+                  <q-card class="col-sm-6">
+                    <q-card-section class="">
+                      <div class="main-section">
+                      <div class="main-wrapper items-center steup-form justify-between">
+                        <h6 class="main-color f-14 line-height-21 fw-600 text-left margin-b-10">Manage Auto Pay</h6>
+                        <p class="main-color f-14 line-height-21 text-left ">Enabling  will make sure you get your payments in on time.</p>
+                        <div class="text-left q-mt-none">
+                            <q-btn label="Manage Auto Pay" class="margin-t-20 btn-fixwd-height p-relative text-capitalize bg-primary margin-t-40" type="button" />
+                        </div>
+                      </div>
+                      </div>
+                    </q-card-section>
+                  </q-card>
+                </div>
               </q-tab-panel>
         </q-tab-panels>
       </div>
@@ -374,9 +399,6 @@ export default defineComponent({
     onReset () {
 
     }
-    // onLoginButtonClick() {
-    //   console.log('onLoginButtonClick');
-    // }
   },
   setup () {
     const options = ref(stringOptions)
@@ -397,96 +419,118 @@ export default defineComponent({
 })
 </script>
 
-<style lang="sass">
-.container-box
-  max-width:1140px
-.q-card__section
-  padding:25px
-.q-card
-  background: #FFFFFF
-  mix-blend-mode: normal
-  box-shadow: 0px 0px 25px rgb(0 0 0 / 3%)
-  border-radius: 10px
-  margin: 20px auto 0px
-.box-15 .q-card__section
-  padding:15px 20px
-
-.q-field--filled .q-field__control:hover:before
-  opacity:0
-.q-field--filled .q-field__control
-  background: #FFFFFF
-  mix-blend-mode: normal
-  border: 1px solid #E1E1E1
-  box-sizing: border-box
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.03)
-  border-radius: 10px
-.q-field__control
-  color: transparent
-.add-bank-account
+<style lang="scss">
+.container-box{
+  max-width:1140px;
+}
+.q-card__section{
+  padding:25px;
+}
+.q-card{
+  background: #FFFFFF;
+  mix-blend-mode: normal;
+  box-shadow: 0px 0px 25px rgb(0 0 0 / 3%);
+  border-radius: 10px;
+  margin: 20px auto 0px;
+}
+.box-15 .q-card__section{
+  padding:15px 20px;
+}
+.q-field--filled .q-field__control:hover:before{
+  opacity:0;
+}
+.q-field--filled .q-field__control{
+  background: #FFFFFF;
+  mix-blend-mode: normal;
+  border: 1px solid #E1E1E1;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.03);
+  border-radius: 10px;
+}
+.q-field__control{
+  color: transparent;
+}
+.add-bank-account{
   min-width:172px !important
-.monthly-selectbox
-  width: 118px
-  margin-right: 20px
-.yearly-selectbox
+}
+.monthly-selectbox{
+  width: 118px;
+  margin-right: 20px;
+}
+.yearly-selectbox{
   width:104px
-.steup-form
+}
+.steup-form{
   max-width:600px
-.calendar-input
-  width:141px
-  margin-right:20px
-.Date-input
-  width:96px
-.set-min-width
-  min-width: 147px
-.payment-history > div
-  width: calc(100% / 4)
-  display: flex
-  justify-content: center
-.payment-history > div:first-child
-  justify-content: left
-.payment-history > div:nth-child(4)
-  justify-content: flex-end
+}
+.calendar-input{
+  width:141px;
+  margin-right:20px;
+}
+.Date-input{
+  width:96px;
+}
+.set-min-width{
+  min-width: 147px;
+}
+.payment-history > div{
+  width: calc(100% / 4);
+  display: flex;
+  justify-content: center;
+}
+.payment-history > div:first-child{
+  justify-content: left;
+}
+.payment-history > div:nth-child(4){
+  justify-content: flex-end;
+}
+.listing{
+  padding-left:20px;
+  margin:8px 0px 21px;
+}
+.AddBankPaymentMethod .q-card__section.q-card__section--vert{
+    background: #FFFFFF;
+    mix-blend-mode: normal !important;
+    border: 1px solid #E1E1E1 !important;
+    box-sizing: border-box !important;
+    box-shadow: 0px 0px 25px rgb(0 0 0 / 3%) !important;
+    border-radius: 10px;
+    padding:30px 10px;
+}
+.autoAccountBank .q-dialog__inner--minimized > div{
 
-
-.listing
-  padding-left:20px
-  margin:8px 0px 21px
-.AddBankPaymentMethod .q-card__section.q-card__section--vert
-    background: #FFFFFF
-    mix-blend-mode: normal !important
-    border: 1px solid #E1E1E1 !important
-    box-sizing: border-box !important
-    box-shadow: 0px 0px 25px rgb(0 0 0 / 3%) !important
-    border-radius: 10px
-    padding:30px 10px
-.autoAccountBank .q-dialog__inner--minimized > div
-    max-width: 620px
-.creditCard
-  margin-left:10px
-.bankAccount
-  margin-right:10px
-.AddBankPaymentMethod > div
-  width: calc((100% / 2) - 10px)
-  margin-top: 40px
-  margin-bottom: 40px
-.AddBankPaymentMethod
-  margin:0px 30px !important
-
-.payment-tab .setup-panel
-  padding:19px 0px
-
-.calendar-input i.q-icon:after
-  background-image: url('/src/assets/calendar.png')
-  z-index: 999
-  right: 0px
-  position: absolute
-  content: ''
-  width: 20px
-  background-size: contain
-  height: 20px
-  font-size: 20px
-  background-repeat: no-repeat
-
-.calendar-input .q-icon
+    max-width: 620px;
+}
+.creditCard{
+  margin-left:10px;
+}
+.bankAccount{
+  margin-right:10px;
+}
+.AddBankPaymentMethod > div{
+  width: calc((100% / 2) - 10px);
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.AddBankPaymentMethod{
+  margin:0px 30px !important;
+}
+.payment-tab .setup-panel{
+  padding:19px 0px;
+}
+.calendar-input i.q-icon:after{
+  background-image: url('/src/assets/calendar.png');
+  z-index: 999;
+  right: 0px;
+  position: absolute;
+  content: '';
+  width: 20px;
+  background-size: contain;
+  height: 20px;
+  font-size: 20px;
+  background-repeat: no-repeat;
+}
+.calendar-input .q-icon{
   font-size: 0
+}
 </style>
