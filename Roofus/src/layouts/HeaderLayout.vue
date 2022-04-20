@@ -1,55 +1,43 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated class="header-wrapper">
-      <q-toolbar>
-        <!-- <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        /> -->
+    <q-header elevated class="header-wrapper flex items-center main-login-header">
+      <div class="row flex w-100 h-100 items-center">
+        <div class="logo-sc"><div class="text-left"><img width="93" height="23" src="~assets/main-logo.png"></div></div>
+        <div class="menu-sc flex justify-center">
+          <q-tabs
+            v-model="tab"
+            narrow-indicator
+            dense
+            align="justify"
+            @click="tabClickEvent"
+          >
+            <q-tab class="text-primary-color" name="overview" label="Overview" />
+            <q-tab class="text-primary-color" name="payments" label="Payments" />
+            <q-tab class="text-primary-color" name="lease" label="Lease" />
+            <q-tab class="text-primary-color" name="maintenance" label="Maintenance" />
 
-        <div><div class="text-left"><img width="93" height="23" src="~assets/main-logo.png"></div></div>
+          </q-tabs>
+        </div>
 
-
-        <q-tabs
-          v-model="tab"
-          no-caps
-          class="bg-red text-white shadow-2 flex flex-center"
-          @click="tabClickEvent"
-        >
-          <q-tab name="overview" label="OverView" />
-          <q-tab name="payments" label="Payments" />
-          <q-tab name="lease" label="Lease" />
-          <q-tab name="maintenance" label="Maintenance" />
-        </q-tabs>
-
-
-
-      </q-toolbar>
+        <div class="notification-sc flex items-center">
+          <div class="notification-wrapper p-relative ">
+            <img src="~assets/notification-icon.png" class="cursor-pointer">
+          </div>
+          <div class="profile-image p-relative cursor-pointer">
+            <img width="40" height="40" src="~assets/user-img.png">
+              <q-btn-dropdown class="dropdown-btn">
+                <q-list>
+                  <q-item clickable v-close-popup @click="onItemClick">
+                    <q-item-section>
+                      <q-item-label>Profile</q-item-label>
+                    </q-item-section>
+                  </q-item>
+                </q-list>
+              </q-btn-dropdown>
+          </div>
+        </div>
+      </div>
     </q-header>
-
-    <!-- <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-    >
-      <q-list>
-        <q-item-label
-          header
-        >
-          Essential Links
-        </q-item-label>
-
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
-    </q-drawer> -->
 
     <q-page-container>
       <router-view />
@@ -59,88 +47,101 @@
 
 <script>
 import { defineComponent, ref } from 'vue'
-// import EssentialLink from 'components/EssentialLink.vue'
-
-const linksList = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
-  }
-]
 
 export default defineComponent({
   name: 'HeaderLayout',
-
-  components: {
-    // EssentialLink
-  },
   methods:{
+
+    /**
+      On Tab change
+    */
     tabClickEvent() {
-      console.log('tab',this.tab)
       this.$router.push('/header/'+this.tab)
     },
+
+    /**
+      On Profile dropdown click
+    */
     openProfilePage () {
       this.$router.push('/header/profile')
     }
   },
-
   setup () {
-    const leftDrawerOpen = ref(false)
-
     return {
-      tab:'',
-      essentialLinks: linksList,
-      leftDrawerOpen,
-      toggleLeftDrawer () {
-        leftDrawerOpen.value = !leftDrawerOpen.value
-      }
+      tab: ref('overview'),
     }
-  }
+  },
 })
 </script>
 
-<style lang="sass">
-.header-wrapper
-  background: #FAFAFA
-  box-shadow: 0px 4px 10px rgb(0 0 0 / 9%)
-  padding: 15.5px 30px
+<style lang="scss">
+.header-wrapper {
+  background: #FAFAFA;
+  box-shadow: 0px 4px 10px rgb(0 0 0 / 9%);
+  padding: 0px 30px;
+  height:60px;
+}
+.logo-sc{
+  width: 93px;
+}
+.menu-sc{
+  width: calc(100% - (93px + 104px));
+  height:100%;
+}
 
+// for profile dropdown css
+.notification-wrapper{
+  margin-right: 26px;
+}
+.profile-image{
+  width: 40px;
+  height: 40px;
+  margin-right:15px;
+}
+.profile-image img{
+  border-radius:100%;
+}
+.notification-wrapper:after{
+  content: '';
+  position: static;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: red;
+  border-radius: 100%;
+  background: #CE7F44;
+  border: 1px solid #FAFAFA;
+  box-sizing: border-box;
+  width: 9px;
+  height: 9px;
+  border: 1px solid #fff;
+}
+.q-icon.q-btn-dropdown__arrow{
+  font-size: 0px;
+  transform: none;
+}
+.q-icon.q-btn-dropdown__arrow:after{
+  content: '';
+  background-image: url('/src/assets/down-arrow.png');
+  width: 13px;
+  height: 13px;
+  align-items: center;
+  display: flex;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 100%;
+  top: -28px;
+  margin-left: 10px;
+  bottom: 0;
+  margin: auto auto auto 10px;
+}
+.q-btn--actionable.q-btn--standard:before{
+    box-shadow: unset;
+}
+.dropdown-btn:before{
+  box-shadow: none;
+}
+.dropdown-btn{
+  padding:0
+}
 </style>

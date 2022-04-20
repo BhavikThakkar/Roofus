@@ -1,23 +1,13 @@
 
 const routes = [
   {
-    // path: '/',
-    // component: () => import('layouts/HeaderLayout.vue'),
-    // children: [
-    //   { path: '', component: () => import('pages/IndexPage.vue') }
-    // ],
-
     path: '/',
     component: () => import('pages/LoginPage.vue'),
     // children: [
-    //   { path: 'login', component: () => import('pages/LoginPage.vue') }
+    //   { path: '/login', component: () => import('pages/LoginPage.vue') }
     // ],
 
   },
-  // {
-  //   path: '/overview',
-  //   component: () => import('pages/OverViewPage.vue'),
-  // },
   {
     path: '/header',
     component: () => import('layouts/HeaderLayout.vue'),

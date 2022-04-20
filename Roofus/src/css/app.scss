@@ -1,83 +1,447 @@
 // app global css in SCSS form
-@import "../css/quasar.variables.scss";
-*{
-    font-family: 'Poppins', sans-serif;
+@import "../css/compressed.scss";
+* {
+  font-family: "Poppins", sans-serif;
 }
-body{
-    font-family: 'Poppins', sans-serif;
-}
-.main-color{
-    color:$main-font-color;
-}
-.form-lable{
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 18px;
-    margin-top:5px;
-    margin-bottom: 5px;
-}
-.bg-main-color{
-    background: $bg-color;
+body {
+  font-family: "Poppins", sans-serif;
 }
 
-// margin-css
-.margin-top-25{
-    margin-top: 25px;
+// tabbing
+.q-tab {
+  min-height: 0;
+  margin: 0px 11px;
+  text-transform: none;
 }
-.margin-b-20{
-    margin-bottom: 20px;
-}
-.margin-t-44{
-    margin-top: 44px;
-}
-
-// font css
-.f-18{
-    font-size: 18px;
-}
-.f-14{
-    font-size: 14px;
-}
-
-
-
-.q-input{
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
-.q-field__control{
-    height: auto;
-}
-.q-field__native, .q-field__prefix, .q-field__suffix, .q-field__input{
-    padding: 5px 0;
-    font-size: 14px;
-}
-.form-field-gap{
-    margin-bottom: 30px;
+.text-primary{
+  color: $primary-color !important;
 }
 
 // common-btn css
+.bg-trasnparent-btn {
+  background: transparent;
+}
+.bg-dark {
+  background: $dark;
+}
 .q-btn--rectangle {
-    border-radius: 10px;
+  border-radius: 10px;
 }
 .bg-primary {
-    background: $primary-color !important;
+  background: $primary-color !important;
+}
+.bg-secondary {
+  background: $main-font-color;
+}
+.btn-with-icon {
+  padding-left: 42.3px;
+  padding-right: 20px;
+}
+.btn-fixwd-height {
+  height: 40px;
+}
+.btn-with-icon:after {
+  content: "";
+  background-image: src;
+  width: 11px;
+  height: 15px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  left: 20px;
+  top: 0;
+  position: absolute;
+  bottom: 0;
+  margin: auto;
+}
+.view-lease:after {
+  background-image: url("/src/assets/view-lease.png");
+}
+.contact-assets:after {
+  background-image: url("/src/assets/contact-assets.png");
+}
+.create-request:after {
+  background-image: url("/src/assets/create-request.png");
 }
 
 // bg-color css
-.q-btn--actionable.q-btn--standard:before{
-    box-shadow: 0px 0px 25px rgb(0 0 0 / 3%);
+.q-btn--actionable.q-btn--standard:before {
+  box-shadow: 0px 0px 25px rgb(0 0 0 / 3%);
 }
-
+.q-tab__label {
+  color: $main-font-color;
+  position: relative;
+  font-weight: 400;
+}
+.q-tab--active .q-tab__label {
+  font-weight: 600;
+}
+body.desktop .q-focusable:focus > .q-focus-helper, body.desktop .q-manual-focusable--focused > .q-focus-helper, body.desktop .q-hoverable:hover > .q-focus-helper{
+  background: transparent;
+}
+.q-toolbar {
+  height: 100%;
+}
 
 // header css
-.q-layout__section--marginal{
-    background-color:$white;
+.q-page-container {
+  padding-top: 0px !important;
+  display: inline-block;
+  width: 100%;
 }
-.q-layout__shadow:after{
-  display:none
+.q-layout__section--marginal {
+  background-color: $white;
 }
-.q-toolbar{
-    min-height:auto
+.q-layout__shadow:after {
+  display: none;
 }
+.q-toolbar {
+  min-height: auto;
+}
+
+// Make-payment expansion
+.makePayment-expansion {
+  .q-card__section{
+    padding: 10px 20px;
+  }
+  .q-card{
+    margin: 0;
+  }
+}
+
+
+
+
+// *************************************************************************
+//                        RESPONSIVE SCREEN WISE
+// *************************************************************************
+@media (min-width: 600px) {
+  .q-dialog__inner--minimized > div {
+    max-width: 499px;
+  }
+}
+
+@media (max-width: 1200px) {
+  // OVERVIEW-SCREEN
+  .overview-screen {
+    .overview-content {
+      width: calc(100% - 352px);
+    }
+    .overview-img {
+      max-width: 352px;
+      margin-right: 0;
+      img{
+        width: 100%;
+      }
+    }
+    .container-box {
+      max-width: 100%;
+      padding: 0px 30px;
+    }
+    .maintenance-second.maintenance-box {
+      width: calc((100% / 3) - 70px);
+      margin-left: 70px;
+    }
+  }
+
+  // LEASE-SCREEN
+  .lease-screen{
+    .container-box{
+      width: 100%;
+      padding: 0px 30px;
+    }
+    .lease-right{
+      .profile-content {
+        .proflie-title:first-child{
+          margin-bottom: 20px;
+        }
+      }
+    }
+    .q-card__section{
+      padding: 20px !important;
+    }
+    .lease-history-wrapper{
+      h6{
+        margin-right: 170px;
+      }
+    }
+
+  }
+
+  // PAYMENT-SCREEN
+  .payment-screen{
+    .container-box {
+      max-width: 100%;
+      padding: 0px 30px;
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  // OVERVIEW-SCREEN
+  .overview-screen {
+    .maintenance-second.maintenance-box
+     {
+      width: calc((100% / 3) - 40px);
+      margin-left: 40px;
+    }
+    .maintenance-third.maintenance-box{
+      width: calc((100% / 3) - 40px);
+      margin-left: 40px;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  // OVERVIEW-SCREEN
+  .overview-screen {
+    .overview-main {
+      .main-wrapper {
+        flex-direction: column-reverse;
+      }
+      .overview-content {
+        width: 100%;
+        padding: 20px 0px 0px 0px;
+      }
+      .overview-img {
+        margin: 0 auto;
+      }
+    }
+    .maintenance-second.maintenance-box {
+      position: relative;
+      margin-top: 19px;
+      padding-top: 6px;
+    }
+    .maintenance-first.maintenance-box{
+      width: calc(100% / 2);
+    }
+    .maintenance-date {
+      margin-right: 20px;
+    }
+    .maintenance-third.maintenance-box {
+      width: calc(100% / 2);
+      margin-left: 0;
+    }
+    .maintenance-second.maintenance-box {
+      width: 100%;
+      margin-left: 0;
+      padding-bottom: 20px;
+    }
+    .maintenance-second.maintenance-box:before {
+      content: "";
+      border-top: 1px solid #fff;
+      height: 1px;
+      width: calc(100% + 40px);
+      display: inline-block;
+      position: absolute;
+      bottom: 100%;
+      left: -20px;
+      right: 0;
+    }
+  }
+
+  // LEASE-SCREEN
+  .lease-screen{
+    .lease-dusration{
+      padding-left: 0 !important;
+    }
+    .lease-history-description{
+      width: 100%;
+      margin-top: 10px;
+    }
+    .lease-history-title{width: 100%;}
+  }
+}
+
+@media (max-width: 767px) {
+  // OVERVIEW-SCREEN
+  .overview-screen {
+    .maintenance-card:last-child{margin-bottom: 40px;}
+    .q-card__section {
+      padding: 20px;
+    }
+    .category{
+      justify-content: normal;
+    }
+    .category-title{
+      width: calc(100% / 2);
+    }
+    .maintenance-first.maintenance-box{
+      width: 100%;
+    }
+    .maintenance-date{
+      padding-left: 50px;
+      margin-right: 0;
+    }
+    .maintenance-third.maintenance-box{
+      justify-content: normal;
+      width: 100%;
+    }
+    .notiication-icon{
+      right: 0;
+      left: 115px;
+    }
+  }
+
+  // HEADER-SECTION
+  .header-wrapper{
+    .q-tab__label:after {content: '';background-image: url('/src/assets/Home.png');width: 30px;height: 30px;display: inline-block;background-repeat: no-repeat;background-size: contain;position: absolute;bottom: 100%;left: 0;right: 0;margin: auto;}
+    .q-tab__label{font-size: 12px;}
+    .q-tab__content{height: 90px;}
+    .q-tab:nth-child(2) .q-tab__label:after{background-image: url('/src/assets/payment-icon.png');}
+    .q-tab:nth-child(3) .q-tab__label:after{background-image: url('/src/assets/lease-icon.png');}
+    .q-tab:nth-child(4) .q-tab__label:after{background-image: url('/src/assets/maintenance-icon.png');}
+    .q-tabs {position: fixed;bottom: 0;left: 0;right: 0;height: 60px;background: #dddd;background: #FAFAFA;box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.09);}
+    .menu-sc {width: calc(100% - (93px + 83px)) !important;}
+    .profile-image{margin-right: 0 !important;}
+    .profile-image:after{display: none !important;}
+    .q-tab--active .q-tab__label{color: $primary-color;}
+    .q-tab--active:after{display: none;}
+    .q-tab{margin: 0px;}
+  }
+
+  // ADD-BANK DETAILS POPUP
+  .autoAccountBank .q-dialog__inner--minimized > div {
+    max-width: 315px;
+    .AddBankPaymentMethod > div{
+      width: 100%;
+    }
+    .bankAccount {
+      margin-right: 0;
+      margin-bottom: 10px !important;
+    }
+    .creditCard {
+      margin-left: 0;
+      margin-top: 10px !important;
+    }
+  }
+
+  // LEASE-SCREEN
+  .lease-screen {
+    .container-box{
+      margin-top: 20px;
+    }
+    .lease-info{
+      width: 100% !important;
+    }
+    .q-card{
+      margin: 10px auto 0px !important;
+    }
+    .lease-history-description{
+      width: 100% !important;
+    }
+    .lease-history-title{
+      width: 100% !important;
+    }
+    .lease-flex-wrap{
+      justify-content: left;display: inline-block;
+    }
+    .lease-flex-wrap > h6 {
+      padding-bottom: 4px;
+    }
+    padding-bottom: 60px;
+  }
+
+  // PAYMENT SRCREEN
+  .payment-screen {
+    .make-payment-desktop{display: none;}
+    .make-payment-mobile{display: inline-block !important;}
+    .container-box {
+      max-width: 100%;
+      padding: 0px 30px;
+    }
+    .steup-form{
+      max-width: 100%;
+    }
+  }
+
+}
+
+@media (max-width: 550px) {
+
+  // LOGIN-SCREEN
+  .login-screen {
+    .container-box {
+      max-width: 100%;
+    }
+    .margin-t-44 {
+      margin: 0;
+    }
+    h5 {
+      display: none;
+    }
+    .q-card {
+      margin: 0;
+      height: 100vh;
+      border-radius: 0;
+    }
+    .login-btn {
+      width: 230px;
+    }
+    .button-wrapper {
+      text-align: center;
+      margin-top: 30px;
+    }
+  }
+
+  // OVERVIEW-SCREEN
+  .overview-screen {
+    .overview-img {
+      max-width: 230px;
+    }
+    .new-maintennance-request {
+      position: fixed;
+      bottom: 104px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+    }
+    .q-card{
+      margin: 10px auto 0px;
+    }
+    .q-card__section{padding: 30px 18px;}
+    .overview-property.overview-main {margin-top: 20px;}
+    .overview-main {margin-top: 41px;}
+    .maintenance-request {margin-top: 20px;}
+    .maintenance-img{margin-right: 15px;}
+    .category{
+      width: calc(100% - 85px);
+    }
+    .maintenance-request .q-card__section{padding:20px;}
+  }
+}
+
+@media (max-width: 375px) {
+    // LOGIN-SCREEN
+    .login-screen{
+      .login-img {
+        width: 299px;
+        margin: auto;
+        padding-top: calc(52px - 25px);
+        img {
+          width: 100%;
+        }
+      }
+      .login-form-content {
+        width: 275px;
+        margin: auto;
+      }
+    }
+
+    // OVERVIEW-SCREEN
+    .overview-screen{
+      .maintenance-date{padding-left:40px;}
+      .category{
+        .category-title{
+          width: auto;
+          padding-right: 19px;
+        }
+        .category-title:last-child{
+          padding-right: 0;
+        }
+      }
+    }
+}
+
