@@ -4,7 +4,7 @@
     <!-- <q-page-container> -->
     <div class="fullscreen text-white text-center login-screen">
       <div class="container-box q-mx-auto margin-t-44">
-          <h5 class="f-18 main-color q-mt-none q-mb-none text-left">LOGIN</h5>
+          <h5 class="f-18 main-color q-mt-none q-mb-none text-left">LOGIN1</h5>
           <q-card class="my-card q-mt-none">
             <q-card-section>
               <div class="main-section"><div class="main-wrapper"><div class="login-img"><img src="/src/assets/login-img.png"></div>
